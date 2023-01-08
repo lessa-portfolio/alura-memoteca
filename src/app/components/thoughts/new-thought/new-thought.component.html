@@ -5,10 +5,10 @@
 
   <form>
     <label for="thought">Pensamento</label>
-    <input type="textarea" class="input" id="thought" name="thought" placeholder="Digite um pensamento">
+    <input type="textarea" class="input" id="thought" name="thought" placeholder="Digite um pensamento" [(ngModel)]="thought.content">
 
     <label for="authorship">Autoria ou Fonte</label>
-    <input type="text" class="input" id="authorship" name="authorship" placeholder="Digite uma autoria ou fonte">
+    <input type="text" class="input" id="authorship" name="authorship" placeholder="Digite uma autoria ou fonte" [(ngModel)]="thought.authorship">
 
     <label for="model">Selecione um modelo para seu card:</label>
     <div class="container-radio">
@@ -23,8 +23,8 @@
         Prévia:
         <div class="model model-1 ff-roboto-mono">
           <img src="../../../../assets/images/modelo1.png" alt="Aspas azuis escuro">
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="authorship"><b>Lucas Lessa</b></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="authorship"><b>{{ thought.authorship }}</b></p>
         </div>
       </div>
 
@@ -39,8 +39,8 @@
         Prévia:
         <div class="model model-2 ff-roboto-mono">
           <img src="../../../../assets/images/modelo2.png" alt="Aspas azuis claro">
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="authorship"><b>Lucas Lessa</b></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="authorship"><b>{{ thought.authorship }}</b></p>
         </div>
       </div>
 
@@ -55,15 +55,15 @@
         Prévia:
         <div class="model model-3 ff-roboto-mono">
           <img src="../../../../assets/images/modelo3.png" alt="Aspas verdes">
-          <p class="content">Aqui vai o conteúdo</p>
-          <p class="authorship"><b>Lucas Lessa</b></p>
+          <p class="content">{{ thought.content }}</p>
+          <p class="authorship"><b>{{ thought.authorship }}</b></p>
         </div>
       </div>
     </div>
 
     <div class="actions">
-      <button class="btn">Salvar</button>
-      <button class="btn">Cancelar</button>
+      <button (click)="createThought()" class="btn">Salvar</button>
+      <button (click)="cancel()" class="btn">Cancelar</button>
     </div>
   </form>
 </section>
