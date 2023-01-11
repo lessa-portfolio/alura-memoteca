@@ -22,8 +22,4 @@ export class NewThoughtComponent implements OnInit {
   createThought() {
     alert('Novo pensamento criado')
   }
-
-  cancel() {
-
-  }
 }
